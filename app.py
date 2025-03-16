@@ -6,8 +6,8 @@ import os
 app = Flask(__name__)
 
 
-CSV_FILE = r"C:\Users\satya\OneDrive\My stuff\Personal\Programming\Python\webservers\schoolworkdb\entries.csv"
-EXCEL_FILE = r"C:\Users\satya\OneDrive\My stuff\Personal\Programming\Python\webservers\schoolworkdb\entries.xlsx"
+CSV_FILE = r"entries.csv"
+EXCEL_FILE = r"entries.xlsx"
 
 COLUMNS = ["Name", "Class", "Section", "Admission Number", "Date", "Day"]
 
