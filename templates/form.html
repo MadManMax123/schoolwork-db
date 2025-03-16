@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Entry Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <form method="post" action="/">
+        <h2>Entry Made By</h2>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" name="name" required></td>
+            </tr>
+            <tr>
+                <td>Class:</td>
+                <td><input type="text" name="class" required></td>
+            </tr>
+            <tr>
+                <td>Section:</td>
+                <td><input type="text" name="section" required></td>
+            </tr>
+            <tr>
+                <td>Admission Number:</td>
+                <td><input type="text" name="admission" required></td>
+            </tr>
+        </table>
+        
+        <label for="date">Date:</label>
+        <input type="date" name="date" required>
+        
+        <label>Day:</label>
+        <input type="radio" name="day" value="Monday" required> Monday
+        <input type="radio" name="day" value="Tuesday"> Tuesday
+        <input type="radio" name="day" value="Wednesday"> Wednesday
+        <input type="radio" name="day" value="Thursday"> Thursday
+        <input type="radio" name="day" value="Friday"> Friday
+        <input type="radio" name="day" value="Saturday"> Saturday
+        
+        <h3>Class Details</h3>
+        {% for i in range(10) %}
+        <label for="class{{ i }}">Class:</label>
+        <select name="class{{ i }}">
+            {% for subject in subjects %}
+            <option value="{{ subject }}">{{ subject }}</option>
+            {% endfor %}
+        </select>
+        
+        <label for="description{{ i }}">Description:</label>
+        <textarea name="description{{ i }}"></textarea>
+        {% endfor %}
+        
+        <label for="hw">H/W Given:</label>
+        <textarea name="hw"></textarea>
+        
+        <label for="remarks">Remarks:</label>
+        <textarea name="remarks"></textarea>
+        
+        <label for="announcements">Announcements:</label>
+        <textarea name="announcements"></textarea>
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
